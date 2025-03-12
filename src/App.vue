@@ -4,7 +4,6 @@ import GetLocation from './components/GetLocation.vue';
 
 <template>
   <div>
-    <h1>Hello World</h1>
     <GetLocation />
   </div>
 </template>
