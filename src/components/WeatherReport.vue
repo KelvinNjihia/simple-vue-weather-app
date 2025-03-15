@@ -37,6 +37,7 @@ const props = defineProps<Props>();
 const data: Ref<WeatherData | undefined> = ref();
 
 const fetchWeather = async (coords: Coords): Promise<WeatherData> => {
+  // try {
   const { latitude, longitude } = coords;
   const q = `${latitude},${longitude}`;
   const response = await fetch(
@@ -44,6 +45,9 @@ const fetchWeather = async (coords: Coords): Promise<WeatherData> => {
   );
   const data = (await response) && response.json();
   return data;
+  // } catch (err) {
+  //   console.log(err);
+  // }
 };
 
 const formatDate = (dateString: Date): string => {
@@ -77,7 +81,7 @@ onMounted(async () => {
         </h1>
         <p>{{ data.location.name }} {{ data.location.region }}</p>
         <p>Precipitation: {{ data.current.precip_mm }}mm</p>
-        <p>{{ formatDate(data.location.localtime) }}</p>
+        <p data-testid="localtime">{{ formatDate(data.location.localtime) }}</p>
         <p>
           Wind: {{ data.current.wind_kph }} kph
           <WindDirection :degrees="data.current.wind_degree" />
