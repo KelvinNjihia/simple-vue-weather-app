@@ -1,45 +1,46 @@
-# vue-local-weather
+# A simple weather app
 
-This template should help get you started developing with Vue 3 in Vite.
+This is a simple app that displays the weather for a given location. It uses the Weather API to get the weather data.
 
-## Recommended IDE Setup
+## Features
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
+- Display the current weather for a given location
 
 ## Project Setup
 
+Pull the repo and install the dependencies.
+
 ```sh
+git clone https://github.com/KelvinNjihia/simple-vue-weather-app.git
+
+cd simple-vue-weather-app
+
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+Run the app.
 
 ```sh
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+## API
 
-```sh
-npm run build
+The app uses the Weather API [WeatherAPI](https://www.weatherapi.com/) to get the weather data. Signup and get an API key. The API key is stored in the `.env` file.
+Create a `.env` file in the root of the project and add the following:
+
+```
+VITE_WEATHER_API_KEY=your_api_key
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+## Testing
+
+The app uses Vitest for testing.
 
 ```sh
 npm run test:unit
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+## Style
 
-```sh
-npm run lint
-```
+The app uses Tailwind CSS v4 for styling.
